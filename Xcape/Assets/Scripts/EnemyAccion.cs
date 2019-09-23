@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAccion : MonoBehaviour
 {
     public int EnemyHealth = 10;
+    public GameObject zombie;
 
     void DeductPoints(int DamageAmount)
     {
@@ -15,7 +16,21 @@ public class EnemyAccion : MonoBehaviour
     {
         if (EnemyHealth <= 0)
         {
-            Destroy(gameObject);
+            this.GetComponent<zombieFollow>().enabled = false;
+            zombie.GetComponent<Animation>().Play("Dying");
+            StartCoroutine(EndZombie());
+            
+            //Destroy(gameObject);
         }
+    }
+
+    IEnumerator EndZombie()
+    {
+        
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+        Vida.vidaJugador += 20;
+        
+
     }
 }
