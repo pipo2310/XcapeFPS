@@ -5,8 +5,8 @@ using UnityEngine;
 public class zombieFollow : MonoBehaviour
 {
     public GameObject Jugador;
-    public float targetDistance;
-    public float AllowedRange = 10;
+    public float targetDistance=0;
+    public float AllowedRange = 100;
     public GameObject Enemigo;
     public float velocidadEnemigo;
     public int Attack;
@@ -20,24 +20,40 @@ public class zombieFollow : MonoBehaviour
     private void Update()
     {
         transform.LookAt(Jugador.transform);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Disparo)) {
-            targetDistance = Disparo.distance;
-            if (targetDistance<AllowedRange)
-            {
-                velocidadEnemigo = 0.05f;
-                if (Attack==0) {
-                    Enemigo.GetComponent<Animation>().Play("Walking");
-                    transform.position = Vector3.MoveTowards (transform.position, Jugador.transform.position, velocidadEnemigo);
-                }
-            }
-            else
-            {
-                velocidadEnemigo = 0;
-                Enemigo.GetComponent<Animation>().Play("Idle");
-            }
-        }
+        //LayerMask mask = LayerMask.GetMask("Wall");
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Disparo))
+        {
+            
+            //if (Disparo.collider.gameObject == Jugador)
+            //{
+                
+                targetDistance = Disparo.distance;
+                Debug.Log("Distancia " + targetDistance + " Attack " + Attack);
+                if (targetDistance < AllowedRange)
+                {
+                    
+                    velocidadEnemigo = 0.05f;
+                    if (Attack == 0)
+                    {
+                        Enemigo.GetComponent<Animation>().Play("Walking");
+                        transform.position = Vector3.MoveTowards(transform.position, Jugador.transform.position, velocidadEnemigo);
+                    }
 
-        if (Attack==1)
+
+                }
+                else
+                {
+                    velocidadEnemigo = 0;
+                    Enemigo.GetComponent<Animation>().Play("Idle");
+                }
+
+           // }
+          
+
+
+
+        }
+        if (Attack == 1)
         {
             if (estaAtacando == 0)
             {
@@ -46,6 +62,8 @@ public class zombieFollow : MonoBehaviour
             velocidadEnemigo = 0;
             Enemigo.GetComponent<Animation>().Play("Attacking");
         }
+
+
     }
     public void OnTriggerEnter()
     {

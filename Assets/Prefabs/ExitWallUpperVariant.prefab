@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitWallUpperVariant
       objectReference: {fileID: 0}
+    - target: {fileID: 4649644122124821743, guid: 93c217df1423aec45abb26de4e1b8c65,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4649644122124821739, guid: 93c217df1423aec45abb26de4e1b8c65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,5 +77,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4649644122124821741, guid: 93c217df1423aec45abb26de4e1b8c65,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6eb059a4a879e744ca6f258ddf0cdad2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c217df1423aec45abb26de4e1b8c65, type: 3}
