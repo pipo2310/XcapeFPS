@@ -46,7 +46,6 @@ public class MazeController : MonoBehaviour
         int rowInd, colInd;
         float xCoord = 0, zCoord = 0;
         float xShift = halfLength, zShift = halfLength;
-        float xRandomShift = 0, zRandomShift = 0;
         int colZombieInstantiation = 0;
         Quaternion rot = Quaternion.Euler(0, 90, 0);
 

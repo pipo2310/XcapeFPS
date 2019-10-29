@@ -19,83 +19,82 @@ public class zombieFollow : MonoBehaviour
     public int elegirSonido;
     private void Update()
     {
-        transform.LookAt(Jugador.transform);
-        //LayerMask mask = LayerMask.GetMask("Wall");
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Disparo))
-        {
+        //transform.LookAt(Jugador.transform);
+        ////LayerMask mask = LayerMask.GetMask("Wall");
+        //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Disparo))
+        //{
             
-            //if (Disparo.collider.gameObject == Jugador)
-            //{
+        //    //if (Disparo.collider.gameObject == Jugador)
+        //    //{
                 
-                targetDistance = Disparo.distance;
-                Debug.Log("Distancia " + targetDistance + " Attack " + Attack);
-                if (targetDistance < AllowedRange)
-                {
+        //        targetDistance = Disparo.distance;
+        //        Debug.Log("Distancia " + targetDistance + " Attack " + Attack);
+        //        if (targetDistance < AllowedRange)
+        //        {
                     
-                    velocidadEnemigo = 0.05f;
-                    if (Attack == 0)
-                    {
-                        Enemigo.GetComponent<Animation>().Play("Walking");
-                        transform.position = Vector3.MoveTowards(transform.position, Jugador.transform.position, velocidadEnemigo);
-                    }
+        //            velocidadEnemigo = 0.05f;
+        //            if (Attack == 0)
+        //            {
+        //                Enemigo.GetComponent<Animation>().Play("Walking");
+        //                transform.position = Vector3.MoveTowards(transform.position, Jugador.transform.position, velocidadEnemigo);
+        //            }
 
 
-                }
-                else
-                {
-                    velocidadEnemigo = 0;
-                    Enemigo.GetComponent<Animation>().Play("Idle");
-                }
+        //        }
+        //        else
+        //        {
+        //            velocidadEnemigo = 0;
+        //            Enemigo.GetComponent<Animation>().Play("Idle");
+        //        }
 
-           // }
+        //   // }
           
 
 
 
-        }
-        if (Attack == 1)
-        {
-            if (estaAtacando == 0)
-            {
-                StartCoroutine(enemyDamage());
-            }
-            velocidadEnemigo = 0;
-            Enemigo.GetComponent<Animation>().Play("Attacking");
-        }
+        //}
+        //if (Attack == 1)
+        //{
+        //    if (estaAtacando == 0)
+        //    {
+        //        StartCoroutine(enemyDamage());
+        //    }
+        //    velocidadEnemigo = 0;
+        //    Enemigo.GetComponent<Animation>().Play("Attacking");
+        //}
 
 
     }
-    public void OnTriggerEnter()
-    {
-        Attack = 1;
-    }
-    public void OnTriggerExit()
-    {
-        Attack = 0;
-    }
-    IEnumerator enemyDamage()
-    {
-        estaAtacando = 1;
-        elegirSonido = Random.Range(1, 4);
-        yield return new WaitForSeconds(0.9f);
-        Screenflash.SetActive(true);
-        Vida.vidaJugador -= 10;
-        if (elegirSonido == 1)
-        {
-            hurt1.Play();
-        }
-        if (elegirSonido == 2)
-        {
-            hurt2.Play();
-        }
-        if (elegirSonido == 3)
-        {
-            hurt3.Play();
-        }
-        yield return new WaitForSeconds(0.05f);
-        Screenflash.SetActive(false);
-        yield return new WaitForSeconds(1);
-        estaAtacando = 0;
-    }
-
+    //public void OnTriggerEnter()
+    //{
+    //    Attack = 1;
+    //}
+    //public void OnTriggerExit()
+    //{
+    //    Attack = 0;
+    //}
+    //IEnumerator enemyDamage()
+    //{
+    //    estaAtacando = 1;
+    //    elegirSonido = Random.Range(1, 4);
+    //    yield return new WaitForSeconds(0.9f);
+    //    Screenflash.SetActive(true);
+    //    Vida.vidaJugador -= 10;
+    //    if (elegirSonido == 1)
+    //    {
+    //        hurt1.Play();
+    //    }
+    //    if (elegirSonido == 2)
+    //    {
+    //        hurt2.Play();
+    //    }
+    //    if (elegirSonido == 3)
+    //    {
+    //        hurt3.Play();
+    //    }
+    //    yield return new WaitForSeconds(0.05f);
+    //    Screenflash.SetActive(false);
+    //    yield return new WaitForSeconds(1);
+    //    estaAtacando = 0;
+    //}
 }

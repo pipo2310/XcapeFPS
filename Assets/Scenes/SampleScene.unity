@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.366795
@@ -265,6 +269,7 @@ GameObject:
   - component: {fileID: 146339757}
   - component: {fileID: 146339758}
   - component: {fileID: 146339759}
+  - component: {fileID: 146339760}
   m_Layer: 0
   m_Name: ZombieEnemy
   m_TagString: Untagged
@@ -369,7 +374,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146339752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efb4e15fb121acb4c9ca4fe6606472af, type: 3}
   m_Name: 
@@ -393,7 +398,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146339752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10fda06d328f285419342c3843fcdcaa, type: 3}
   m_Name: 
@@ -402,6 +407,29 @@ MonoBehaviour:
   zombie: {fileID: 1427222058}
   dropAmmo: {fileID: 0}
   dropVida: {fileID: 0}
+--- !u!114 &146339760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146339752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ab1c128a3020b4eb5c7a58cb318f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zombie: {fileID: 1427222058}
+  Jugador: {fileID: 1982803115}
+  Ammo: {fileID: 963305504}
+  Life: {fileID: 990572324}
+  Screenflash: {fileID: 696821119}
+  zombieHealth: 10
+  zombieSpeed: 0
+  allowedAttackRange: 1
+  hurt1: {fileID: 614143923}
+  hurt2: {fileID: 1351603015}
+  hurt3: {fileID: 1852766240}
 --- !u!1 &149558342
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +548,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: box
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 721056895991426811, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6287836789983732601, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4234716062821710240, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152493775193411352, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080596665305963236, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5914308947006388991, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859513622370522124, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787093739417309008, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7821853109410408383, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dfb260c55a4533a419f18348a0ce8817,
         type: 3}
@@ -1670,7 +1748,7 @@ MonoBehaviour:
   specialPrefab2: {fileID: 2951110690921269084, guid: 8f27abcdd3035bc4eb90d51a6dd2fcb5,
     type: 3}
   zombieEnemyPrefab: {fileID: 146339752}
-  cellsPerSide: 5
+  cellsPerSide: 6
   minZombiesPerCellCount: 0
   maxZombiesPerCellCount: 0
 --- !u!1 &886230807
@@ -2006,7 +2084,7 @@ GameObject:
   - component: {fileID: 963305507}
   - component: {fileID: 963305506}
   - component: {fileID: 963305505}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AmmoCrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2132,7 +2210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143abda82d7d0ae4fbd8d5f01527faf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPickupSound: {fileID: 0}
+  LifePickupSound: {fileID: 1345048974}
 --- !u!65 &990572326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2445,7 +2523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1c923c88a5ad844b5d699e319ad6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPickupSound: {fileID: 0}
+  AmmoPickupSound: {fileID: 1345048974}
 --- !u!65 &1070083480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3081,7 +3159,7 @@ GameObject:
   - component: {fileID: 1427445576}
   - component: {fileID: 1427445575}
   - component: {fileID: 1427445574}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemyTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4040,7 +4118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1927819190}
   - component: {fileID: 1927819189}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AmmoObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4619,7 +4697,7 @@ GameObject:
   - component: {fileID: 2037316220}
   - component: {fileID: 2037316219}
   - component: {fileID: 2037316221}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
