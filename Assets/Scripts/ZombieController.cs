@@ -8,7 +8,6 @@ public class ZombieController : MonoBehaviour
 {
     public GameObject Zombie;
     public GameObject Jugador;
-    //public GameObject VidaJugador;
     public GameObject Ammo;
     private GameObject AmmoDrop;
     public GameObject Life;
@@ -104,7 +103,6 @@ public class ZombieController : MonoBehaviour
                     {
                         StartCoroutine(ZombieDamage());
                     }
-                    //currentState = ZombieState.Wait;
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out res))
                     {
                         if (res.collider.gameObject == Jugador)
@@ -132,7 +130,6 @@ public class ZombieController : MonoBehaviour
     void DeductPoints(int DamageAmount)
     {
         zombieHealth -= DamageAmount;
-        Debug.Log("ZombieHealth --> :" + zombieHealth);
     }
 
     IEnumerator ZombieDamage()
@@ -140,7 +137,6 @@ public class ZombieController : MonoBehaviour
         isAttacking = true;
         hurtAudio = Random.Range(1, 4);
         yield return new WaitForSeconds(0.9f);
-        //yield return new WaitForSeconds(2.5f);
         Screenflash.SetActive(true);
         Vida.vidaJugador -= 10;
         switch (hurtAudio)
@@ -158,7 +154,6 @@ public class ZombieController : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         Screenflash.SetActive(false);
         yield return new WaitForSeconds(1);
-        //yield return new WaitForSeconds(2.5f);
         isAttacking = false;
     }
 

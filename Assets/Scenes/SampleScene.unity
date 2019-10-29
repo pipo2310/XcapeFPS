@@ -1750,7 +1750,7 @@ MonoBehaviour:
   zombieEnemyPrefab: {fileID: 146339752}
   cellsPerSide: 6
   minZombiesPerCellCount: 0
-  maxZombiesPerCellCount: 0
+  maxZombiesPerCellCount: 1
 --- !u!1 &886230807
 GameObject:
   m_ObjectHideFlags: 0

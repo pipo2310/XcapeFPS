@@ -9,9 +9,17 @@ public class JuntarVida : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         LifePickupSound.Play();
-
-            Vida.vidaJugador += 20;            
-            this.gameObject.SetActive(false);
-        
+        if (Vida.vidaJugador < 100)
+        {
+            if (Vida.vidaJugador <= 80)
+            {
+                Vida.vidaJugador += 20;
+            }
+            else
+            {
+                Vida.vidaJugador += 10;
+            }
+        }
+        this.gameObject.SetActive(false);
     }
 }

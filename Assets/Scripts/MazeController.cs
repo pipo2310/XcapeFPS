@@ -46,7 +46,7 @@ public class MazeController : MonoBehaviour
         int rowInd, colInd;
         float xCoord = 0, zCoord = 0;
         float xShift = halfLength, zShift = halfLength;
-        int colZombieInstantiation = 0;
+        //int colZombieInstantiation = 0;
         Quaternion rot = Quaternion.Euler(0, 90, 0);
 
         //for (rowInd = 0; rowInd < cellsPerSide; rowInd++)
@@ -70,7 +70,7 @@ public class MazeController : MonoBehaviour
             Instantiate(prefab, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
         }
 
-        colZombieInstantiation = 4;
+        //colZombieInstantiation = 4;
 
         for (rowInd = 0; rowInd < cellsPerSide; rowInd++)
         {
@@ -83,17 +83,32 @@ public class MazeController : MonoBehaviour
 
             for (colInd = 0; colInd < cellsPerSide; colInd++)
             {
-                if (colInd == colZombieInstantiation)
+                int cantZombies = Random.Range(minZombiesPerCellCount, maxZombiesPerCellCount + 1);
+                for (int i = 0; i < cantZombies; i++)
                 {
                     xCoord = colInd * length;
                     zCoord = ((rowInd + 1) * length) - halfLength;
 
-                    Vector2 tempPosition = (new Vector2(xCoord, zCoord)) + (Vector2) (Random.insideUnitCircle * (halfLength - 1));
+                    Vector2 tempPosition = (new Vector2(xCoord, zCoord)) + (Vector2)(Random.insideUnitCircle * (halfLength - 1));
                     Vector3 position = new Vector3(tempPosition.x, (float)1.4, tempPosition.y);
                     Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> (" + xCoord + ", " + zCoord + ")");
                     Debug.Log("pos: " + position);
                     Instantiate(zombieEnemyPrefab, position, Quaternion.identity);
                 }
+
+
+                //Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> " + cantZombies + "zombies");
+                //if (colInd == colZombieInstantiation)
+                //{
+                //    xCoord = colInd * length;
+                //    zCoord = ((rowInd + 1) * length) - halfLength;
+
+                //    Vector2 tempPosition = (new Vector2(xCoord, zCoord)) + (Vector2) (Random.insideUnitCircle * (halfLength - 1));
+                //    Vector3 position = new Vector3(tempPosition.x, (float)1.4, tempPosition.y);
+                //    Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> (" + xCoord + ", " + zCoord + ")");
+                //    Debug.Log("pos: " + position);
+                //    Instantiate(zombieEnemyPrefab, position, Quaternion.identity);
+                //}
 
                 if (rowInd == cellsPerSide - 1 && colInd == cellsPerSide - 1)
                 {
