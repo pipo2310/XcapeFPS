@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jugador: {fileID: 1982803115}
   targetDistance: 0
-  AllowedRange: 10
+  AllowedRange: 100
   Enemigo: {fileID: 1427222058}
   velocidadEnemigo: 0
   Attack: 0
@@ -400,8 +400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 10
   zombie: {fileID: 1427222058}
-  dropAmmo: {fileID: 963305504}
-  dropVida: {fileID: 990572324}
+  dropAmmo: {fileID: 0}
+  dropVida: {fileID: 0}
 --- !u!1 &149558342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd6958b62450e349bbdc30c8f5bb119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 2
+  DamageAmount: 5
   TargetDistance: 0
   AllowedRange: 15
 --- !u!1 &693205381
@@ -1671,7 +1671,8 @@ MonoBehaviour:
     type: 3}
   zombieEnemyPrefab: {fileID: 146339752}
   cellsPerSide: 5
-  zombiesCount: 0
+  minZombiesPerCellCount: 0
+  maxZombiesPerCellCount: 0
 --- !u!1 &886230807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,9 +1861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943dc60adf977ff4b9fb61b82f10ecf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReloadSound: {fileID: 1129861718}
-  CrossObject: {fileID: 247482167}
-  MechanicsObject: {fileID: 229489185}
+  ReloadSound: {fileID: 0}
+  CrossObject: {fileID: 0}
+  MechanicsObject: {fileID: 0}
   ClipCount: 0
   ReserveCount: 0
   ReloadAvailable: 0
@@ -2131,7 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143abda82d7d0ae4fbd8d5f01527faf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPickupSound: {fileID: 1345048974}
+  AmmoPickupSound: {fileID: 0}
 --- !u!65 &990572326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2444,7 +2445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1c923c88a5ad844b5d699e319ad6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPickupSound: {fileID: 1345048974}
+  AmmoPickupSound: {fileID: 0}
 --- !u!65 &1070083480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4937,9 +4938,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943dc60adf977ff4b9fb61b82f10ecf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReloadSound: {fileID: 1129861718}
-  CrossObject: {fileID: 247482167}
-  MechanicsObject: {fileID: 665737158}
+  ReloadSound: {fileID: 0}
+  CrossObject: {fileID: 0}
+  MechanicsObject: {fileID: 0}
   ClipCount: 0
   ReserveCount: 0
   ReloadAvailable: 0
