@@ -379,17 +379,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb4e15fb121acb4c9ca4fe6606472af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jugador: {fileID: 1982803115}
+  Jugador: {fileID: 0}
   targetDistance: 0
   AllowedRange: 100
-  Enemigo: {fileID: 1427222058}
+  Enemigo: {fileID: 0}
   velocidadEnemigo: 0
   Attack: 0
   estaAtacando: 0
-  Screenflash: {fileID: 696821119}
-  hurt1: {fileID: 614143923}
-  hurt2: {fileID: 1351603015}
-  hurt3: {fileID: 1852766240}
+  Screenflash: {fileID: 0}
+  hurt1: {fileID: 0}
+  hurt2: {fileID: 0}
+  hurt3: {fileID: 0}
   elegirSonido: 0
 --- !u!114 &146339759
 MonoBehaviour:
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 10
-  zombie: {fileID: 1427222058}
+  zombie: {fileID: 0}
   dropAmmo: {fileID: 0}
   dropVida: {fileID: 0}
 --- !u!114 &146339760
@@ -419,17 +419,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ab1c128a3020b4eb5c7a58cb318f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie: {fileID: 1427222058}
-  Jugador: {fileID: 1982803115}
-  Ammo: {fileID: 963305504}
-  Life: {fileID: 990572324}
-  Screenflash: {fileID: 696821119}
+  Zombie: {fileID: 0}
+  Jugador: {fileID: 0}
+  Ammo: {fileID: 0}
+  Life: {fileID: 0}
+  Screenflash: {fileID: 0}
   zombieHealth: 10
   zombieSpeed: 0
   allowedAttackRange: 1
-  hurt1: {fileID: 614143923}
-  hurt2: {fileID: 1351603015}
-  hurt3: {fileID: 1852766240}
+  hurt1: {fileID: 0}
+  hurt2: {fileID: 0}
+  hurt3: {fileID: 0}
 --- !u!1 &149558342
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 721056895991426811, guid: dfb260c55a4533a419f18348a0ce8817,
+    - target: {fileID: -7821853109410408383, guid: dfb260c55a4533a419f18348a0ce8817,
         type: 3}
       propertyPath: m_Layer
       value: 2
@@ -564,37 +564,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: -4234716062821710240, guid: dfb260c55a4533a419f18348a0ce8817,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152493775193411352, guid: dfb260c55a4533a419f18348a0ce8817,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6080596665305963236, guid: dfb260c55a4533a419f18348a0ce8817,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: -5914308947006388991, guid: dfb260c55a4533a419f18348a0ce8817,
         type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6859513622370522124, guid: dfb260c55a4533a419f18348a0ce8817,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787093739417309008, guid: dfb260c55a4533a419f18348a0ce8817,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -7821853109410408383, guid: dfb260c55a4533a419f18348a0ce8817,
+    - target: {fileID: -4234716062821710240, guid: dfb260c55a4533a419f18348a0ce8817,
         type: 3}
       propertyPath: m_Layer
       value: 2
@@ -668,6 +643,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 721056895991426811, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080596665305963236, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787093739417309008, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859513622370522124, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152493775193411352, guid: dfb260c55a4533a419f18348a0ce8817,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb260c55a4533a419f18348a0ce8817, type: 3}
@@ -746,10 +746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f57f9e25575b4d408b01842786804e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpCurs: {fileID: 738716796}
-  DownCurs: {fileID: 514357412}
-  LeftCurs: {fileID: 784874722}
-  RightCurs: {fileID: 937831472}
+  UpCurs: {fileID: 0}
+  DownCurs: {fileID: 0}
+  LeftCurs: {fileID: 0}
+  RightCurs: {fileID: 0}
 --- !u!4 &247482169
 Transform:
   m_ObjectHideFlags: 0
@@ -1742,15 +1742,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e936d585578a2341818afb078838f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4649644122124821743, guid: 93c217df1423aec45abb26de4e1b8c65, type: 3}
-  specialPrefab: {fileID: 8969126371732310596, guid: df523542372919f46b8148aa84276ef0,
+  prefabWall: {fileID: 4649644122124821743, guid: 93c217df1423aec45abb26de4e1b8c65,
     type: 3}
-  specialPrefab2: {fileID: 2951110690921269084, guid: 8f27abcdd3035bc4eb90d51a6dd2fcb5,
+  prefabExitWallUpperVariant: {fileID: 2951110690921269084, guid: 8f27abcdd3035bc4eb90d51a6dd2fcb5,
     type: 3}
-  zombieEnemyPrefab: {fileID: 146339752}
-  cellsPerSide: 6
+  prefabExitWallSideVariant: {fileID: 8969126371732310596, guid: df523542372919f46b8148aa84276ef0,
+    type: 3}
+  prefabZombieEnemy: {fileID: 146339752}
+  cellsPerSide: 10
   minZombiesPerCellCount: 0
-  maxZombiesPerCellCount: 1
+  maxZombiesPerCellCount: 0
 --- !u!1 &886230807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,7 +2104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1c923c88a5ad844b5d699e319ad6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPickupSound: {fileID: 1345048974}
+  AmmoPickupSound: {fileID: 0}
 --- !u!65 &963305506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2210,7 +2211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143abda82d7d0ae4fbd8d5f01527faf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifePickupSound: {fileID: 1345048974}
+  LifePickupSound: {fileID: 0}
 --- !u!65 &990572326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2523,7 +2524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1c923c88a5ad844b5d699e319ad6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPickupSound: {fileID: 1345048974}
+  AmmoPickupSound: {fileID: 0}
 --- !u!65 &1070083480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4138,9 +4139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InternalAmmo: 0
-  AmmoDisplay: {fileID: 1635091473}
+  AmmoDisplay: {fileID: 0}
   InternalLoaded: 0
-  LoadedDisplay: {fileID: 1551103129}
+  LoadedDisplay: {fileID: 0}
 --- !u!4 &1927819190
 Transform:
   m_ObjectHideFlags: 0
@@ -4717,7 +4718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaInterna: 0
-  displayVida: {fileID: 1958062584}
+  displayVida: {fileID: 0}
 --- !u!4 &2037316220
 Transform:
   m_ObjectHideFlags: 0
@@ -4744,11 +4745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d76cf95638e40044b1ef3a82b93372a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Vida100: {fileID: 886230807}
-  Vida80: {fileID: 1208711143}
-  Vida60: {fileID: 693205381}
-  Vida40: {fileID: 1675563960}
-  Vida20: {fileID: 327000688}
+  Vida100: {fileID: 0}
+  Vida80: {fileID: 0}
+  Vida60: {fileID: 0}
+  Vida40: {fileID: 0}
+  Vida20: {fileID: 0}
   CurrentHealth: 0
 --- !u!1 &2040523969
 GameObject:
