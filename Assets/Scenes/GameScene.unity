@@ -419,17 +419,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ab1c128a3020b4eb5c7a58cb318f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie: {fileID: 0}
-  Jugador: {fileID: 0}
-  Ammo: {fileID: 0}
-  Life: {fileID: 0}
-  Screenflash: {fileID: 0}
+  Zombie: {fileID: 1427222058}
+  Jugador: {fileID: 1982803115}
+  Ammo: {fileID: 963305504}
+  Life: {fileID: 990572324}
+  Screenflash: {fileID: 696821119}
   zombieHealth: 10
   zombieSpeed: 0
   allowedAttackRange: 1
-  hurt1: {fileID: 0}
-  hurt2: {fileID: 0}
-  hurt3: {fileID: 0}
+  hurt1: {fileID: 614143923}
+  hurt2: {fileID: 1351603015}
+  hurt3: {fileID: 1852766240}
 --- !u!1 &149558342
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,7 +2104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1c923c88a5ad844b5d699e319ad6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoPickupSound: {fileID: 0}
+  AmmoPickupSound: {fileID: 1345048974}
 --- !u!65 &963305506
 BoxCollider:
   m_ObjectHideFlags: 0
