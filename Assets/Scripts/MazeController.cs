@@ -5,10 +5,10 @@ using UnityEngine;
 public class MazeController : MonoBehaviour
 {
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
-    public GameObject prefab;
-    public GameObject specialPrefab;
-    public GameObject specialPrefab2;
-    public GameObject zombieEnemyPrefab;
+    public GameObject prefabWall;
+    public GameObject prefabExitWallUpperVariant;
+    public GameObject prefabExitWallSideVariant;
+    public GameObject prefabZombieEnemy;
 
     private GameObject zombie;
     private GameObject exitLeftSide;
@@ -39,7 +39,7 @@ public class MazeController : MonoBehaviour
         //Instantiate(prefab, new Vector3(0, 0, 10), Quaternion.identity);
         //Instantiate(prefab, new Vector3(0 + halfLength, 0, 0 + halfLength), rot);
 
-        length =(int) prefab.transform.localScale.x;
+        length =(int) prefabWall.transform.localScale.x;
         halfLength = length / 2;
         specialLength = halfLength / 2;
 
@@ -67,7 +67,7 @@ public class MazeController : MonoBehaviour
         {
             xCoord = (colInd * length);
             zCoord = 0;
-            Instantiate(prefab, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
+            Instantiate(prefabWall, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
         }
 
         //colZombieInstantiation = 4;
@@ -77,7 +77,7 @@ public class MazeController : MonoBehaviour
             // Instantiate left wall for cuadrant
             xCoord = -halfLength;
             zCoord = (rowInd + 1) * length - halfLength;
-            Instantiate(prefab, new Vector3(xCoord, 0, zCoord), rot);
+            Instantiate(prefabWall, new Vector3(xCoord, 0, zCoord), rot);
 
             //colZombieInstantiation = Random.Range(0, cellsPerSide);
 
@@ -93,7 +93,7 @@ public class MazeController : MonoBehaviour
                     Vector3 position = new Vector3(tempPosition.x, (float)1.4, tempPosition.y);
                     Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> (" + xCoord + ", " + zCoord + ")");
                     Debug.Log("pos: " + position);
-                    Instantiate(zombieEnemyPrefab, position, Quaternion.identity);
+                    Instantiate(prefabZombieEnemy, position, Quaternion.identity);
                 }
 
 
@@ -115,19 +115,19 @@ public class MazeController : MonoBehaviour
                     xCoord = (colInd * length) + halfLength;
                     zCoord = (rowInd + 1) * length - halfLength;
                     // Instantiate right wall for cuadrant
-                    Instantiate(prefab, new Vector3(xCoord, 0, zCoord), rot);
+                    Instantiate(prefabWall, new Vector3(xCoord, 0, zCoord), rot);
 
                     // Instantiate lower wall for cuadrant
                     xCoord = (colInd * length);
                     zCoord = (rowInd + 1) * length;
                     // Upper cube
-                    exitUppperSide = Instantiate(specialPrefab2, new Vector3(xCoord, 8, zCoord), Quaternion.identity);
+                    exitUppperSide = Instantiate(prefabExitWallUpperVariant, new Vector3(xCoord, 8, zCoord), Quaternion.identity);
                     xCoord = (colInd * length) - (float) 3.5;
                     // Left side cube
-                    exitLeftSide = Instantiate(specialPrefab, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
+                    exitLeftSide = Instantiate(prefabExitWallSideVariant, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
                     xCoord = (colInd * length) + (float) 3.5;
                     // Right side cube
-                    exitRightSide = Instantiate(specialPrefab, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
+                    exitRightSide = Instantiate(prefabExitWallSideVariant, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
                 }
                 else
                 {
@@ -136,7 +136,7 @@ public class MazeController : MonoBehaviour
                         xCoord = (colInd * length) + halfLength;
                         zCoord = (rowInd + 1) * length - halfLength;
                         // Instantiate right wall for cuadrant
-                        Instantiate(prefab, new Vector3(xCoord, 0, zCoord), rot);
+                        Instantiate(prefabWall, new Vector3(xCoord, 0, zCoord), rot);
                     }
 
                     if (mazeGenerator.cellHasLowerWall(rowInd, colInd))
@@ -144,7 +144,7 @@ public class MazeController : MonoBehaviour
                         xCoord = (colInd * length);
                         zCoord = (rowInd + 1) * length;
                         // Instantiate lower wall for cuadrant
-                        Instantiate(prefab, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
+                        Instantiate(prefabWall, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
                     }
                 }                
             }
