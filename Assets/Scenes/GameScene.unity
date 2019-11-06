@@ -267,8 +267,6 @@ GameObject:
   - component: {fileID: 146339754}
   - component: {fileID: 146339753}
   - component: {fileID: 146339757}
-  - component: {fileID: 146339758}
-  - component: {fileID: 146339759}
   - component: {fileID: 146339760}
   m_Layer: 0
   m_Name: ZombieEnemy
@@ -367,46 +365,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &146339758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146339752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb4e15fb121acb4c9ca4fe6606472af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Jugador: {fileID: 0}
-  targetDistance: 0
-  AllowedRange: 100
-  Enemigo: {fileID: 0}
-  velocidadEnemigo: 0
-  Attack: 0
-  estaAtacando: 0
-  Screenflash: {fileID: 0}
-  hurt1: {fileID: 0}
-  hurt2: {fileID: 0}
-  hurt3: {fileID: 0}
-  elegirSonido: 0
---- !u!114 &146339759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146339752}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10fda06d328f285419342c3843fcdcaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyHealth: 10
-  zombie: {fileID: 0}
-  dropAmmo: {fileID: 0}
-  dropVida: {fileID: 0}
 --- !u!114 &146339760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,7 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143abda82d7d0ae4fbd8d5f01527faf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifePickupSound: {fileID: 0}
+  LifePickupSound: {fileID: 1345048974}
 --- !u!65 &990572326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4139,9 +4097,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InternalAmmo: 0
-  AmmoDisplay: {fileID: 0}
+  AmmoDisplay: {fileID: 1635091473}
   InternalLoaded: 0
-  LoadedDisplay: {fileID: 0}
+  LoadedDisplay: {fileID: 1551103129}
 --- !u!4 &1927819190
 Transform:
   m_ObjectHideFlags: 0
@@ -4718,7 +4676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaInterna: 0
-  displayVida: {fileID: 0}
+  displayVida: {fileID: 1958062584}
 --- !u!4 &2037316220
 Transform:
   m_ObjectHideFlags: 0
@@ -4745,11 +4703,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d76cf95638e40044b1ef3a82b93372a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Vida100: {fileID: 0}
-  Vida80: {fileID: 0}
-  Vida60: {fileID: 0}
-  Vida40: {fileID: 0}
-  Vida20: {fileID: 0}
+  Vida100: {fileID: 886230807}
+  Vida80: {fileID: 1208711143}
+  Vida60: {fileID: 693205381}
+  Vida40: {fileID: 1675563960}
+  Vida20: {fileID: 327000688}
   CurrentHealth: 0
 --- !u!1 &2040523969
 GameObject:
