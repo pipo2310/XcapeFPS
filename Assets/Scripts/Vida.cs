@@ -15,7 +15,7 @@ public class Vida : MonoBehaviour
         vidaInterna = vidaJugador;
         displayVida.GetComponent<Text> ().text = "Vida: " + vidaJugador;
         if (vidaJugador==0) {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
 
