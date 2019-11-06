@@ -120,7 +120,6 @@ public class ZombieController : MonoBehaviour
                 }
                 break;
             case ZombieState.Die:
-                this.GetComponent<zombieFollow>().enabled = false;
                 Zombie.GetComponent<Animation>().Play("Dying");
                 StartCoroutine(EndZombie());
                 break;

@@ -704,10 +704,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f57f9e25575b4d408b01842786804e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpCurs: {fileID: 0}
-  DownCurs: {fileID: 0}
-  LeftCurs: {fileID: 0}
-  RightCurs: {fileID: 0}
+  UpCurs: {fileID: 738716796}
+  DownCurs: {fileID: 514357412}
+  LeftCurs: {fileID: 784874722}
+  RightCurs: {fileID: 937831472}
 --- !u!4 &247482169
 Transform:
   m_ObjectHideFlags: 0
@@ -2469,7 +2469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1070083479
 MonoBehaviour:
   m_ObjectHideFlags: 0
