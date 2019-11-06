@@ -27,6 +27,9 @@ public class MazeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cellsPerSide = GameParameters.cellsPerSide;
+        minZombiesPerCellCount = GameParameters.minZombiesPerCellCount;
+        maxZombiesPerCellCount = GameParameters.maxZombiesPerCellCount;
         mazeGenerator = new MazeGenerator(cellsPerSide);
         mazeGenerator.run();
 

@@ -7,19 +7,21 @@ public class StartMenu : MonoBehaviour
 {
 	
 	public void PlayLevel1(){
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}
+        GameParameters.cellsPerSide = 6;
+        GameParameters.minZombiesPerCellCount = 0;
+        GameParameters.maxZombiesPerCellCount = 1;
+        SceneManager.LoadScene("GameScene");
+    }
 	
 	public void PlayLevel2(){
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 	
 	public void PlayLevel3(){
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 		
 	public void QuitGame(){
-	   Debug.Log("QUIT");
 	   Application.Quit();
 	}
 }
