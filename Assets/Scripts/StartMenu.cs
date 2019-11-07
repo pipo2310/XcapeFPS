@@ -5,21 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-	
+    void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 	public void PlayLevel1(){
-        GameParameters.cellsPerSide = 6;
-        GameParameters.minZombiesPerCellCount = 0;
-        GameParameters.maxZombiesPerCellCount = 1;
-        SceneManager.LoadScene("GameScene");
+
+        GameParameters.ConfigureLevel1();
+        Application.LoadLevel("GameScene");
+        //SceneManager.LoadScene("GameScene");
     }
 	
 	public void PlayLevel2(){
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}
+        GameParameters.ConfigureLevel2();
+        Application.LoadLevel("GameScene");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 	
 	public void PlayLevel3(){
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}
+        GameParameters.ConfigureLevel3();
+        Application.LoadLevel("GameScene");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 		
 	public void QuitGame(){
 	   Application.Quit();

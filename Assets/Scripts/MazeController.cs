@@ -8,6 +8,7 @@ public class MazeController : MonoBehaviour
     public GameObject prefabWall;
     public GameObject prefabExitWallUpperVariant;
     public GameObject prefabExitWallSideVariant;
+    public GameObject prefabExit;
     public GameObject prefabZombieEnemy;
 
     private GameObject zombie;
@@ -27,9 +28,13 @@ public class MazeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cellsPerSide = GameParameters.cellsPerSide;
-        minZombiesPerCellCount = GameParameters.minZombiesPerCellCount;
-        maxZombiesPerCellCount = GameParameters.maxZombiesPerCellCount;
+        if (GameParameters.completeFlow)
+        {
+            cellsPerSide = GameParameters.cellsPerSide;
+            minZombiesPerCellCount = GameParameters.minZombiesPerCellCount;
+            maxZombiesPerCellCount = GameParameters.maxZombiesPerCellCount;
+        }
+        
         mazeGenerator = new MazeGenerator(cellsPerSide);
         mazeGenerator.run();
 
@@ -94,8 +99,8 @@ public class MazeController : MonoBehaviour
 
                     Vector2 tempPosition = (new Vector2(xCoord, zCoord)) + (Vector2)(Random.insideUnitCircle * (halfLength - 1));
                     Vector3 position = new Vector3(tempPosition.x, (float)1.4, tempPosition.y);
-                    Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> (" + xCoord + ", " + zCoord + ")");
-                    Debug.Log("pos: " + position);
+                    //Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> (" + xCoord + ", " + zCoord + ")");
+                    //Debug.Log("pos: " + position);
                     Instantiate(prefabZombieEnemy, position, Quaternion.identity);
                 }
 
@@ -125,6 +130,8 @@ public class MazeController : MonoBehaviour
                     zCoord = (rowInd + 1) * length;
                     // Upper cube
                     exitUppperSide = Instantiate(prefabExitWallUpperVariant, new Vector3(xCoord, 8, zCoord), Quaternion.identity);
+                    // Lower cube
+                    Instantiate(prefabExit, new Vector3(xCoord, 3.5f, zCoord), Quaternion.identity);
                     xCoord = (colInd * length) - (float) 3.5;
                     // Left side cube
                     exitLeftSide = Instantiate(prefabExitWallSideVariant, new Vector3(xCoord, 0, zCoord), Quaternion.identity);

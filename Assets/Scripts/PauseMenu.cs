@@ -34,7 +34,8 @@ public class PauseMenu : MonoBehaviour
 	}
 	
 	public void LoadMenu(){
-		SceneManager.LoadScene(0);
+        Application.LoadLevel("StartMenu");
+        //SceneManager.LoadLevel("StartMenu");
 		Debug.Log("menu");
 	}
 	
