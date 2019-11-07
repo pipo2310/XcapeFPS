@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitController : MonoBehaviour
 {
@@ -31,8 +32,12 @@ public class ExitController : MonoBehaviour
         else if (GameParameters.level == 2)
         {
             GameParameters.level = 3;
-            //GameParameters.level = 2;
             Debug.Log("Pasar al nivel 3");
+            SceneManager.LoadScene("GameScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("creditsScene");
         }
     }
 }

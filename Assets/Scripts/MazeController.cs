@@ -91,6 +91,8 @@ public class MazeController : MonoBehaviour
 
             for (colInd = 0; colInd < cellsPerSide; colInd++)
             {
+                if (rowInd != 0)
+                {
                 int cantZombies = Random.Range(minZombiesPerCellCount, maxZombiesPerCellCount + 1);
                 for (int i = 0; i < cantZombies; i++)
                 {
@@ -99,11 +101,9 @@ public class MazeController : MonoBehaviour
 
                     Vector2 tempPosition = (new Vector2(xCoord, zCoord)) + (Vector2)(Random.insideUnitCircle * (halfLength - 1));
                     Vector3 position = new Vector3(tempPosition.x, (float)1.4, tempPosition.y);
-                    //Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> (" + xCoord + ", " + zCoord + ")");
-                    //Debug.Log("pos: " + position);
                     Instantiate(prefabZombieEnemy, position, Quaternion.identity);
                 }
-
+                }
 
                 //Debug.Log("Coords (" + colInd + ", " + rowInd + ") -> " + cantZombies + "zombies");
                 //if (colInd == colZombieInstantiation)

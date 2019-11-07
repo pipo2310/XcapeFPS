@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class JuntarVida : MonoBehaviour
 {
+    public GameObject Jugador;
     public AudioSource LifePickupSound;//Cambiar por un sonido de juntarVida
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
-        LifePickupSound.Play();
-        if (Vida.vidaJugador < 100)
+        if (other.gameObject == Jugador)
         {
-            if (Vida.vidaJugador <= 80)
+            LifePickupSound.Play();
+            if (Vida.vidaJugador < 100)
             {
-                Vida.vidaJugador += 20;
+                if (Vida.vidaJugador <= 80)
+                {
+                    Vida.vidaJugador += 20;
+                }
+                else
+                {
+                    Vida.vidaJugador += 10;
+                }
             }
-            else
-            {
-                Vida.vidaJugador += 10;
-            }
+            this.gameObject.SetActive(false);
         }
-        this.gameObject.SetActive(false);
     }
 }
