@@ -161,7 +161,7 @@ public class ZombieController : MonoBehaviour
         System.Random rnd = new System.Random();
         yield return new WaitForSeconds(3);
         int randomDrop = rnd.Next(0, 10);
-        Debug.Log("Random: " + randomDrop);
+        //Debug.Log("Random: " + randomDrop);
         if (randomDrop <= 6)
         {
             AmmoDrop = Instantiate(Ammo, new Vector3(transform.position.x, Ammo.transform.position.y, transform.position.z), Ammo.transform.rotation);
