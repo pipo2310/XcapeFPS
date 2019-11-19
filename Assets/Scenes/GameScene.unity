@@ -2050,6 +2050,15 @@ MonoBehaviour:
   prefabExit: {fileID: 5522381362457393219, guid: c42d6ad39d9d7e44994c3fa979f91b5d,
     type: 3}
   prefabZombieEnemy: {fileID: 146339752}
+  piso: {fileID: 2080768772}
+  bricks1: {fileID: 2100000, guid: 3abf473d50106f44c9611c2c76fd9a91, type: 2}
+  bricks2: {fileID: 2100000, guid: 30dbe546f6b54eb44a673346755d7868, type: 2}
+  bricks3: {fileID: 2100000, guid: 6eb059a4a879e744ca6f258ddf0cdad2, type: 2}
+  hedge: {fileID: 2100000, guid: 5ccd5b450ec4dc64fa987289e963f48a, type: 2}
+  rocks: {fileID: 2100000, guid: 3ecb283fe2844dc499889f33fa88a05a, type: 2}
+  exteriorGround1: {fileID: 2100000, guid: 778fe0863083b8c4eb97b41d84b64428, type: 2}
+  exteriorGround2: {fileID: 2100000, guid: fd145041bdeb08f4e8915301e9ff2e69, type: 2}
+  interiorGround: {fileID: 2100000, guid: 2f7cc58cbe5313e409562517ad59fc65, type: 2}
   cellsPerSide: 3
   minZombiesPerCellCount: 0
   maxZombiesPerCellCount: 0

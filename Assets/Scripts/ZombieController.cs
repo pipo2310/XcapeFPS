@@ -162,7 +162,7 @@ public class ZombieController : MonoBehaviour
         yield return new WaitForSeconds(3);
         int randomDrop = rnd.Next(0, 10);
         //Debug.Log("Random: " + randomDrop);
-        if (randomDrop <= 6)
+        if (AmmoGlobal.CurrentAmmo == 0 || (Vida.vidaJugador >= 30 && randomDrop <= 6))
         {
             AmmoDrop = Instantiate(Ammo, new Vector3(transform.position.x, Ammo.transform.position.y, transform.position.z), Ammo.transform.rotation);
             AmmoDrop.SetActive(true);

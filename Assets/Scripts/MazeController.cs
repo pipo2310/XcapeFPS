@@ -10,16 +10,27 @@ public class MazeController : MonoBehaviour
     public GameObject prefabExitWallSideVariant;
     public GameObject prefabExit;
     public GameObject prefabZombieEnemy;
+    public GameObject piso;
 
     private GameObject zombie;
     private GameObject exitLeftSide;
     private GameObject exitRightSide;
     private GameObject exitUppperSide;
 
+    public Material bricks1;
+    public Material bricks2;
+    public Material bricks3;
+    public Material hedge;
+    public Material rocks;
+
+    public Material exteriorGround1;
+    public Material exteriorGround2;
+    public Material interiorGround;
+
     public int cellsPerSide;
     public int minZombiesPerCellCount;
     public int maxZombiesPerCellCount;
-
+    
     private int length;
     private int halfLength;
     private int specialLength;
@@ -33,8 +44,30 @@ public class MazeController : MonoBehaviour
             cellsPerSide = GameParameters.cellsPerSide;
             minZombiesPerCellCount = GameParameters.minZombiesPerCellCount;
             maxZombiesPerCellCount = GameParameters.maxZombiesPerCellCount;
+
+            switch (GameParameters.level)
+            {
+                case 1:
+                    prefabWall.GetComponent<MeshRenderer>().material = bricks1;
+                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = bricks2;
+                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = bricks3;
+                    piso.GetComponent<MeshRenderer>().material = interiorGround;
+                    break;
+                case 2:
+                    prefabWall.GetComponent<MeshRenderer>().material = hedge;
+                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = hedge;
+                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = hedge;
+                    piso.GetComponent<MeshRenderer>().material = exteriorGround1;
+                    break;
+                case 3:
+                    prefabWall.GetComponent<MeshRenderer>().material = rocks;
+                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = rocks;
+                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = rocks;
+                    piso.GetComponent<MeshRenderer>().material = exteriorGround2;
+                    break;
+            }
         }
-        
+
         mazeGenerator = new MazeGenerator(cellsPerSide);
         mazeGenerator.run();
 
@@ -78,16 +111,12 @@ public class MazeController : MonoBehaviour
             Instantiate(prefabWall, new Vector3(xCoord, 0, zCoord), Quaternion.identity);
         }
 
-        //colZombieInstantiation = 4;
-
         for (rowInd = 0; rowInd < cellsPerSide; rowInd++)
         {
             // Instantiate left wall for cuadrant
             xCoord = -halfLength;
             zCoord = (rowInd + 1) * length - halfLength;
             Instantiate(prefabWall, new Vector3(xCoord, 0, zCoord), rot);
-
-            //colZombieInstantiation = Random.Range(0, cellsPerSide);
 
             for (colInd = 0; colInd < cellsPerSide; colInd++)
             {
