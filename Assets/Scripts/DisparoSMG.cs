@@ -33,7 +33,6 @@ public class DisparoSMG : MonoBehaviour
         }
     }
 	IEnumerator SMGFire(){
-		Debug.Log("Entro");
 		disparando=1;
 		UpCurs.GetComponent<Animator>().enabled = true;
         DownCurs.GetComponent<Animator>().enabled = true;

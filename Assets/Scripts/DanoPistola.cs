@@ -32,15 +32,14 @@ public class DanoPistola : MonoBehaviour
                             //Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
                             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
                             {
-                                Debug.Log("Hello Corrientre: " + hit.transform.tag);
                                 if (hit.transform.tag == "Zombie")
                                 {
                                     Instantiate(Blood, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                                 }
-                                else
-                                {
-                                    Instantiate(TheBullet, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
-                                }
+                                //else
+                                //{
+                                //    Instantiate(TheBullet, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                                //}
 
                                 if (hit.collider.tag == "ZombieHead")
                                 {

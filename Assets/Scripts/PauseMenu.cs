@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
     }
 	
 	public void Resume(){
-        Debug.Log("resume from pause");
+        //Debug.Log("resume from pause");
         player.GetComponent<FirstPersonController>().enabled = true;
         pauseMenuUI.SetActive(false);
 		Time.timeScale = 1f;
@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour
 	
 	
 	void Pause(){
-        Debug.Log("on pause");
+        //Debug.Log("on pause");
         player.GetComponent<FirstPersonController>().enabled = false;
         pauseMenuUI.SetActive(true);
 		Time.timeScale = 0f;
@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
 	}
 	
 	public void LoadMenu(){
-        Debug.Log("menu");
+        //Debug.Log("menu");
         SceneManager.LoadScene("StartMenu");
         player.GetComponent<FirstPersonController>().enabled = true;
         Time.timeScale = 1f;
@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
     }
 	
 	public void QuitGame(){
-		Debug.Log("quit");
+		//Debug.Log("quit");
 		Application.Quit();
 	}
 	
