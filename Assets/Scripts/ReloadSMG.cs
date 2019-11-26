@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reload : MonoBehaviour
+public class ReloadSMG : MonoBehaviour
 {
     public AudioSource ReloadSound;
     public GameObject CrossObject;
@@ -10,11 +10,11 @@ public class Reload : MonoBehaviour
     public int ClipCount;
     public int ReserveCount;
     public int ReloadAvailable;
-    //public DisparoAccion GunComponent;
+    //public DisparoSMG GunComponent;
 
     void Start()
     {
-        //GunComponent = GetComponent<DisparoAccion>();
+        //GunComponent = GetComponent<DisparoSMG>();
     }
 
     void Update()
@@ -28,7 +28,7 @@ public class Reload : MonoBehaviour
         }
         else
         {
-            ReloadAvailable = 10 - ClipCount;
+            ReloadAvailable = 30 - ClipCount;
         }
 
         if (Input.GetButtonDown("Reload"))
@@ -67,6 +67,6 @@ public class Reload : MonoBehaviour
         CrossObject.SetActive(false);
         MechanicsObject.SetActive(false);
         ReloadSound.Play();
-        GetComponent<Animation>().Play("Reload");
+        //GetComponent<Animation>().Play("Reload");
     }
 }
