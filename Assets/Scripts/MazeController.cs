@@ -49,8 +49,8 @@ public class MazeController : MonoBehaviour
             {
                 case 1:
                     prefabWall.GetComponent<MeshRenderer>().material = bricks1;
-                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = bricks2;
-                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = bricks3;
+                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = bricks2;
+                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = bricks3;
                     piso.GetComponent<MeshRenderer>().material = interiorGround;
                     break;
                 case 2:
