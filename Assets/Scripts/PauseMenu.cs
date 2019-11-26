@@ -7,7 +7,9 @@ public class PauseMenu : MonoBehaviour
 {
    public static bool GameIsPaused = false;
    
-   public GameObject pauseMenuUI; 
+    public GameObject pauseMenuUI;
+    public GameObject player;
+    public GameObject zombie;
 
     // Update is called once per frame
     void Update(){
@@ -21,20 +23,23 @@ public class PauseMenu : MonoBehaviour
     }
 	
 	public void Resume(){
-		pauseMenuUI.SetActive(false);
+        Debug.Log("resume from pause");
+        zombie.enabled = true;
+        pauseMenuUI.SetActive(false);
 		Time.timeScale = 1f;
 		GameIsPaused = false;
 	}
 	
 	
 	void Pause(){
-		pauseMenuUI.SetActive(true);
+        Debug.Log("on pause");
+        zombie.enabled = false;
+        pauseMenuUI.SetActive(true);
 		Time.timeScale = 0f;
 		GameIsPaused = true;
 	}
 	
 	public void LoadMenu(){
-        //Application.LoadLevel("StartMenu");
         Debug.Log("menu");
         SceneManager.LoadScene("StartMenu");
 	}

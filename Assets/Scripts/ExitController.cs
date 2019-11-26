@@ -24,14 +24,12 @@ public class ExitController : MonoBehaviour
             GameParameters.ConfigureLevel2();
             Debug.Log("Pasar al nivel 2");
             Time.timeScale = 1f;
-            //Application.LoadLevel("GameScene");
-
             SceneManager.LoadScene("GameScene");
 
         }
         else if (GameParameters.level == 2)
         {
-            GameParameters.level = 3;
+            GameParameters.ConfigureLevel3();
             Debug.Log("Pasar al nivel 3");
             SceneManager.LoadScene("GameScene");
         }
