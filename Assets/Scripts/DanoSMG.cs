@@ -13,40 +13,48 @@ public class DanoSMG : MonoBehaviour
 	
   void Start(){
 	  DamageAmount=4;
-  }	
-  
-  void Update()
+  }
+
+    void Update()
     {
-        if (AmmoGlobal.LoadedAmmo >= 1) { 
-        if (Input.GetButton("Fire1"))
+        if (!PauseMenu.GameIsPaused)
         {
-            RaycastHit Shot;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
+            if (AmmoGlobal.LoadedAmmo >= 1)
             {
-                TargetDistance = Shot.distance;
-                if (TargetDistance < AllowedRange)
+                if (Input.GetButton("Fire1"))
                 {
-                    //Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
-					if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit)){
-					Debug.Log("Hello: " + hit.transform.tag);
-				if(hit.transform.tag=="Zombie"){
-							Instantiate(Blood,hit.point,Quaternion.FromToRotation(Vector3.up,hit.normal));
-						}else{
-							Instantiate(TheBullet,hit.point,Quaternion.FromToRotation(Vector3.up,hit.normal));
-						}
-					
-					if(hit.collider.tag=="ZombieHead"){
-							Debug.Log("Le has dado en la cabeza con la SMG " + hit.transform.tag);
-							DamageAmount=10;
-							Instantiate(Blood,hit.point,Quaternion.FromToRotation(Vector3.up,hit.normal));
-						}
+                    RaycastHit Shot;
+                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
+                    {
+                        TargetDistance = Shot.distance;
+                        if (TargetDistance < AllowedRange)
+                        {
+                            //Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+                            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+                            {
+                                Debug.Log("Hello: " + hit.transform.tag);
+                                if (hit.transform.tag == "Zombie")
+                                {
+                                    Instantiate(Blood, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                                }
+                                else
+                                {
+                                    Instantiate(TheBullet, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                                }
+
+                                if (hit.collider.tag == "ZombieHead")
+                                {
+                                    Debug.Log("Le has dado en la cabeza con la SMG " + hit.transform.tag);
+                                    DamageAmount = 10;
+                                    Instantiate(Blood, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                                }
+                            }
+                            Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+                            DamageAmount = 4;
+                        }
+                    }
                 }
-				Shot.transform.SendMessage("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
-				DamageAmount=4;
             }
-			}
         }
     }
-    }
-
 }

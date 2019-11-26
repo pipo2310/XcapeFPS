@@ -16,15 +16,21 @@ public class DisparoSMG : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {		
-        cantAmmo=AmmoGlobal.LoadedAmmo;
-		if(Input.GetButton("Fire1")){
-			if(cantAmmo>=1){
-				if(disparando==0){
-					StartCoroutine(SMGFire());
-				}
-			}
-		}
+    {
+        if (!PauseMenu.GameIsPaused)
+        {
+            cantAmmo = AmmoGlobal.LoadedAmmo;
+            if (Input.GetButton("Fire1"))
+            {
+                if (cantAmmo >= 1)
+                {
+                    if (disparando == 0)
+                    {
+                        StartCoroutine(SMGFire());
+                    }
+                }
+            }
+        }
     }
 	IEnumerator SMGFire(){
 		Debug.Log("Entro");

@@ -12,15 +12,18 @@ public class animarMira : MonoBehaviour
 
     void Update()
     {
-        if (AmmoGlobal.LoadedAmmo >= 1)
+        if (!PauseMenu.GameIsPaused)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (AmmoGlobal.LoadedAmmo >= 1)
             {
-                UpCurs.GetComponent<Animator>().enabled = true;
-                DownCurs.GetComponent<Animator>().enabled = true;
-                LeftCurs.GetComponent<Animator>().enabled = true;
-                RightCurs.GetComponent<Animator>().enabled = true;
-                StartCoroutine(WaitingAnim());
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    UpCurs.GetComponent<Animator>().enabled = true;
+                    DownCurs.GetComponent<Animator>().enabled = true;
+                    LeftCurs.GetComponent<Animator>().enabled = true;
+                    RightCurs.GetComponent<Animator>().enabled = true;
+                    StartCoroutine(WaitingAnim());
+                }
             }
         }
     }

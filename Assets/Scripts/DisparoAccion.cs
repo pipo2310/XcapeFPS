@@ -9,14 +9,17 @@ public class DisparoAccion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (AmmoGlobal.LoadedAmmo >= 1)
+        if (!PauseMenu.GameIsPaused)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (AmmoGlobal.LoadedAmmo >= 1)
             {
-                AudioSource gunsound = GetComponent<AudioSource>();
-                gunsound.Play();
-                GetComponent<Animation>().Play("Disparo");
-                AmmoGlobal.LoadedAmmo -= 1;
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    AudioSource gunsound = GetComponent<AudioSource>();
+                    gunsound.Play();
+                    GetComponent<Animation>().Play("Disparo");
+                    AmmoGlobal.LoadedAmmo -= 1;
+                }
             }
         }
     }

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PauseMenu : MonoBehaviour
 {
-   public static bool GameIsPaused = false;
+    public static bool GameIsPaused = false;
    
     public GameObject pauseMenuUI;
     public GameObject player;
-    public GameObject zombie;
 
     // Update is called once per frame
     void Update(){
@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
 	
 	public void Resume(){
         Debug.Log("resume from pause");
-        zombie.enabled = true;
+        player.GetComponent<FirstPersonController>().enabled = true;
         pauseMenuUI.SetActive(false);
 		Time.timeScale = 1f;
 		GameIsPaused = false;
@@ -33,16 +33,20 @@ public class PauseMenu : MonoBehaviour
 	
 	void Pause(){
         Debug.Log("on pause");
-        zombie.enabled = false;
+        player.GetComponent<FirstPersonController>().enabled = false;
         pauseMenuUI.SetActive(true);
 		Time.timeScale = 0f;
 		GameIsPaused = true;
+        Cursor.visible = true;
 	}
 	
 	public void LoadMenu(){
         Debug.Log("menu");
         SceneManager.LoadScene("StartMenu");
-	}
+        player.GetComponent<FirstPersonController>().enabled = true;
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
 	
 	public void QuitGame(){
 		Debug.Log("quit");

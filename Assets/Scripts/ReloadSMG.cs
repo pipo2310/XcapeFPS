@@ -19,37 +19,40 @@ public class ReloadSMG : MonoBehaviour
 
     void Update()
     {
-        ClipCount = AmmoGlobal.LoadedAmmo;
-        ReserveCount = AmmoGlobal.CurrentAmmo;
+        if (!PauseMenu.GameIsPaused)
+        {
+            ClipCount = AmmoGlobal.LoadedAmmo;
+            ReserveCount = AmmoGlobal.CurrentAmmo;
 
-        if (ReserveCount == 0)
-        {
-            ReloadAvailable = 0;
-        }
-        else
-        {
-            ReloadAvailable = 30 - ClipCount;
-        }
-
-        if (Input.GetButtonDown("Reload"))
-        {
-            if (ReloadAvailable >= 1)
+            if (ReserveCount == 0)
             {
-                if (ReserveCount <= ReloadAvailable)
-                {
-                    AmmoGlobal.LoadedAmmo += ReserveCount;
-                    AmmoGlobal.CurrentAmmo -= ReserveCount;
-                    ActionReload();
-                }
-                else
-                {
-                    AmmoGlobal.LoadedAmmo += ReloadAvailable;
-                    AmmoGlobal.CurrentAmmo -= ReloadAvailable;
-                    ActionReload();
-                }
+                ReloadAvailable = 0;
             }
-            StartCoroutine(EnableScripts());
+            else
+            {
+                ReloadAvailable = 30 - ClipCount;
+            }
 
+            if (Input.GetButtonDown("Reload"))
+            {
+                if (ReloadAvailable >= 1)
+                {
+                    if (ReserveCount <= ReloadAvailable)
+                    {
+                        AmmoGlobal.LoadedAmmo += ReserveCount;
+                        AmmoGlobal.CurrentAmmo -= ReserveCount;
+                        ActionReload();
+                    }
+                    else
+                    {
+                        AmmoGlobal.LoadedAmmo += ReloadAvailable;
+                        AmmoGlobal.CurrentAmmo -= ReloadAvailable;
+                        ActionReload();
+                    }
+                }
+                StartCoroutine(EnableScripts());
+
+            }
         }
     }
 

@@ -34,95 +34,98 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Jugador.transform);
-        RaycastHit res;
-
-        switch (currentState)
+        if (!PauseMenu.GameIsPaused)
         {
-            case ZombieState.Wait:
-                if (zombieHealth <= 0)
-                {
-                    currentState = ZombieState.Die;
-                }
-                else
-                {
-                    Zombie.GetComponent<Animation>().Play("Idle");
-                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out res))
+            transform.LookAt(Jugador.transform);
+            RaycastHit res;
+
+            switch (currentState)
+            {
+                case ZombieState.Wait:
+                    if (zombieHealth <= 0)
                     {
-                        if (res.collider.gameObject == Jugador)
+                        currentState = ZombieState.Die;
+                    }
+                    else
+                    {
+                        Zombie.GetComponent<Animation>().Play("Idle");
+                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out res))
                         {
-                            if (res.distance < allowedAttackRange)
+                            if (res.collider.gameObject == Jugador)
                             {
-                                currentState = ZombieState.Attack;
+                                if (res.distance < allowedAttackRange)
+                                {
+                                    currentState = ZombieState.Attack;
+                                }
+                                else
+                                {
+                                    currentState = ZombieState.Walk;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case ZombieState.Walk:
+                    if (zombieHealth <= 0)
+                    {
+                        currentState = ZombieState.Die;
+                    }
+                    else
+                    {
+                        Zombie.GetComponent<Animation>().Play("Walking");
+                        zombieSpeed = 0.05f;
+                        transform.position = Vector3.MoveTowards(transform.position, Jugador.transform.position, zombieSpeed);
+                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out res))
+                        {
+                            if (res.collider.gameObject == Jugador)
+                            {
+                                if (res.distance < allowedAttackRange)
+                                {
+                                    currentState = ZombieState.Attack;
+                                }
                             }
                             else
                             {
-                                currentState = ZombieState.Walk;
+                                currentState = ZombieState.Wait;
                             }
                         }
                     }
-                }
-                break;
-            case ZombieState.Walk:
-                if (zombieHealth <= 0)
-                {
-                    currentState = ZombieState.Die;
-                }
-                else
-                {
-                    Zombie.GetComponent<Animation>().Play("Walking");
-                    zombieSpeed = 0.05f;
-                    transform.position = Vector3.MoveTowards(transform.position, Jugador.transform.position, zombieSpeed);
-                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out res))
+                    break;
+                case ZombieState.Attack:
+                    if (zombieHealth <= 0)
                     {
-                        if (res.collider.gameObject == Jugador)
+                        currentState = ZombieState.Die;
+                    }
+                    else
+                    {
+                        Zombie.GetComponent<Animation>().Play("Attacking");
+                        zombieSpeed = 0;
+                        transform.position = Vector3.MoveTowards(transform.position, Jugador.transform.position, zombieSpeed);
+                        if (!isAttacking)
                         {
-                            if (res.distance < allowedAttackRange)
+                            StartCoroutine(ZombieDamage());
+                        }
+                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out res))
+                        {
+                            if (res.collider.gameObject == Jugador)
                             {
-                                currentState = ZombieState.Attack;
+                                if (res.distance > allowedAttackRange)
+                                {
+                                    currentState = ZombieState.Walk;
+                                }
                             }
-                        }
-                        else
-                        {
-                            currentState = ZombieState.Wait;
-                        }
-                    }                    
-                }
-                break;
-            case ZombieState.Attack:
-                if (zombieHealth <= 0)
-                {
-                    currentState = ZombieState.Die;
-                }
-                else
-                {
-                    Zombie.GetComponent<Animation>().Play("Attacking");
-                    zombieSpeed = 0;
-                    transform.position = Vector3.MoveTowards(transform.position, Jugador.transform.position, zombieSpeed);
-                    if (!isAttacking)
-                    {
-                        StartCoroutine(ZombieDamage());
-                    }
-                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out res))
-                    {
-                        if (res.collider.gameObject == Jugador)
-                        {
-                            if (res.distance > allowedAttackRange)
+                            else
                             {
-                                currentState = ZombieState.Walk;
+                                currentState = ZombieState.Wait;
                             }
                         }
-                        else
-                        {
-                            currentState = ZombieState.Wait;
-                        }
                     }
-                }
-                break;
-            case ZombieState.Die:
-                Zombie.GetComponent<Animation>().Play("Dying");
-                StartCoroutine(EndZombie());
-                break;
+                    break;
+                case ZombieState.Die:
+                    Zombie.GetComponent<Animation>().Play("Dying");
+                    StartCoroutine(EndZombie());
+                    break;
+            }
         }
     }
 
