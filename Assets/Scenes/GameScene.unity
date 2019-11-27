@@ -11648,9 +11648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b27ff2f87a39a4ebc9f319857863c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InternalAmmo: 0
   AmmoDisplay: {fileID: 1635091473}
-  InternalLoaded: 0
   LoadedDisplay: {fileID: 1551103129}
 --- !u!4 &1927819190
 Transform:
@@ -12227,7 +12225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ad36a656b69ac4087b67acdcc6a9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaInterna: 0
   displayVida: {fileID: 1958062584}
 --- !u!4 &2037316220
 Transform:
@@ -12260,7 +12257,6 @@ MonoBehaviour:
   Vida60: {fileID: 693205381}
   Vida40: {fileID: 1675563960}
   Vida20: {fileID: 327000688}
-  CurrentHealth: 0
 --- !u!1 &2040523969
 GameObject:
   m_ObjectHideFlags: 0
