@@ -11,6 +11,14 @@ public class GameParameters
     public static int maxZombiesPerCellCount;
     public static bool gameEnded;
 
+    public static void ConfigureNewGame()
+    {
+        AmmoGlobal.CurrentAmmo = 0;
+        AmmoGlobal.LoadedAmmo = 0;
+
+        HealthGlobal.CurrentHealth = 100;
+}
+
     public static void ConfigureLevel1()
     {
         completeFlow = true;

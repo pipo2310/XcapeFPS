@@ -9,27 +9,25 @@ public class StartMenu : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-    }
-	public void PlayLevel1(){
+        GameParameters.ConfigureNewGame();
 
+    }
+	public void PlayLevel1() {
         GameParameters.ConfigureLevel1();
         SceneManager.LoadScene("GameScene");
-        //SceneManager.LoadScene("GameScene");
     }
 	
-	public void PlayLevel2(){
+	public void PlayLevel2() {
         GameParameters.ConfigureLevel2();
         SceneManager.LoadScene("GameScene");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 	
-	public void PlayLevel3(){
+	public void PlayLevel3() {
         GameParameters.ConfigureLevel3();
         SceneManager.LoadScene("GameScene");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 		
-	public void QuitGame(){
+	public void QuitGame() {
 	   Application.Quit();
 	}
 }

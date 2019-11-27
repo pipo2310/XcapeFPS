@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class AmmoGlobal : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static int CurrentAmmo;
-    public int InternalAmmo;
-    public GameObject AmmoDisplay;
-
     public static int LoadedAmmo;
-    public int InternalLoaded;
+    
+    public GameObject AmmoDisplay;
     public GameObject LoadedDisplay;
+
+    private int InternalAmmo;
+    private int InternalLoaded;
 
     void Update()
     {

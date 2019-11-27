@@ -140,7 +140,7 @@ public class ZombieController : MonoBehaviour
         hurtAudio = Random.Range(1, 4);
         yield return new WaitForSeconds(0.9f);
         Screenflash.SetActive(true);
-        Vida.vidaJugador -= 10;
+        HealthGlobal.CurrentHealth -= 10;
         switch (hurtAudio)
         {
             case 1:
@@ -164,8 +164,7 @@ public class ZombieController : MonoBehaviour
         System.Random rnd = new System.Random();
         yield return new WaitForSeconds(3);
         int randomDrop = rnd.Next(0, 10);
-        //Debug.Log("Random: " + randomDrop);
-        if (AmmoGlobal.CurrentAmmo == 0 || (Vida.vidaJugador >= 30 && randomDrop <= 6))
+        if (AmmoGlobal.CurrentAmmo == 0 || (HealthGlobal.CurrentHealth >= 30 && randomDrop <= 6))
         {
             AmmoDrop = Instantiate(Ammo, new Vector3(transform.position.x, Ammo.transform.position.y, transform.position.z), Ammo.transform.rotation);
             AmmoDrop.SetActive(true);

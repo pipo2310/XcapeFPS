@@ -5,22 +5,22 @@ using UnityEngine;
 public class JuntarVida : MonoBehaviour
 {
     public GameObject Jugador;
-    public AudioSource LifePickupSound;//Cambiar por un sonido de juntarVida
-    // Start is called before the first frame update
+    public AudioSource LifePickupSound; // TODO: Cambiar por un sonido de juntarVida
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == Jugador)
         {
             LifePickupSound.Play();
-            if (Vida.vidaJugador < 100)
+            if (HealthGlobal.CurrentHealth < 100)
             {
-                if (Vida.vidaJugador <= 80)
+                if (HealthGlobal.CurrentHealth <= 80)
                 {
-                    Vida.vidaJugador += 20;
+                    HealthGlobal.CurrentHealth += 20;
                 }
                 else
                 {
-                    Vida.vidaJugador += 10;
+                    HealthGlobal.CurrentHealth += 10;
                 }
             }
             this.gameObject.SetActive(false);

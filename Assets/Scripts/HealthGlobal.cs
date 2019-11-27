@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Vida : MonoBehaviour
+public class HealthGlobal : MonoBehaviour
 {
     public static int CurrentHealth;
 
