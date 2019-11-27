@@ -20,8 +20,12 @@ public class MazeController : MonoBehaviour
     public Material bricks1;
     public Material bricks2;
     public Material bricks3;
-    public Material hedge;
-    public Material rocks;
+    public Material hedge1;
+    public Material hedge2;
+    public Material hedge3;
+    public Material rocks1;
+    public Material rocks2;
+    public Material rocks3;
 
     public Material exteriorGround1;
     public Material exteriorGround2;
@@ -54,15 +58,15 @@ public class MazeController : MonoBehaviour
                     piso.GetComponent<MeshRenderer>().material = interiorGround;
                     break;
                 case 2:
-                    prefabWall.GetComponent<MeshRenderer>().material = hedge;
-                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = hedge;
-                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = hedge;
+                    prefabWall.GetComponent<MeshRenderer>().material = hedge1;
+                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = hedge2;
+                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = hedge3;
                     piso.GetComponent<MeshRenderer>().material = exteriorGround1;
                     break;
                 case 3:
-                    prefabWall.GetComponent<MeshRenderer>().material = rocks;
-                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = rocks;
-                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = rocks;
+                    prefabWall.GetComponent<MeshRenderer>().material = rocks1;
+                    prefabExitWallSideVariant.GetComponent<MeshRenderer>().material = rocks2;
+                    prefabExitWallUpperVariant.GetComponent<MeshRenderer>().material = rocks3;
                     piso.GetComponent<MeshRenderer>().material = exteriorGround2;
                     break;
             }

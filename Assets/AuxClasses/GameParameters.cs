@@ -32,7 +32,7 @@ public class GameParameters
     {
         completeFlow = true;
         level = 2;
-        cellsPerSide = 8;
+        cellsPerSide = 9;
         minZombiesPerCellCount = 1;
         maxZombiesPerCellCount = 3;
     }
@@ -41,7 +41,7 @@ public class GameParameters
     {
         completeFlow = true;
         level = 3;
-        cellsPerSide = 9;
+        cellsPerSide = 10;
         minZombiesPerCellCount = 1;
         maxZombiesPerCellCount = 4;
     }

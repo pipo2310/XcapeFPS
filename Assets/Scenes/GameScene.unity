@@ -2992,8 +2992,12 @@ MonoBehaviour:
   bricks1: {fileID: 2100000, guid: 3abf473d50106f44c9611c2c76fd9a91, type: 2}
   bricks2: {fileID: 2100000, guid: 30dbe546f6b54eb44a673346755d7868, type: 2}
   bricks3: {fileID: 2100000, guid: 6eb059a4a879e744ca6f258ddf0cdad2, type: 2}
-  hedge: {fileID: 2100000, guid: 5ccd5b450ec4dc64fa987289e963f48a, type: 2}
-  rocks: {fileID: 2100000, guid: 3ecb283fe2844dc499889f33fa88a05a, type: 2}
+  hedge1: {fileID: 2100000, guid: 5ccd5b450ec4dc64fa987289e963f48a, type: 2}
+  hedge2: {fileID: 2100000, guid: 09bdfa0d37dd7c44dac9ac203d7dde91, type: 2}
+  hedge3: {fileID: 2100000, guid: c14a445cbf60d0640bd7965780dd3eaa, type: 2}
+  rocks1: {fileID: 2100000, guid: 3ecb283fe2844dc499889f33fa88a05a, type: 2}
+  rocks2: {fileID: 2100000, guid: b440fdd4f7edeae48b4c81cce86845f9, type: 2}
+  rocks3: {fileID: 2100000, guid: 3f2fb312d78a8fb4ea8b2f02888e783a, type: 2}
   exteriorGround1: {fileID: 2100000, guid: 778fe0863083b8c4eb97b41d84b64428, type: 2}
   exteriorGround2: {fileID: 2100000, guid: fd145041bdeb08f4e8915301e9ff2e69, type: 2}
   interiorGround: {fileID: 2100000, guid: 2f7cc58cbe5313e409562517ad59fc65, type: 2}
