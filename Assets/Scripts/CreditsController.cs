@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameOverController : MonoBehaviour
+public class CreditsController : MonoBehaviour
 {
     private bool secondsFlag;
 
@@ -24,8 +23,8 @@ public class GameOverController : MonoBehaviour
 
     IEnumerator ExampleCoroutine()
     {
-        //yield on a new YieldInstruction that waits for 3 seconds.
-        yield return new WaitForSeconds(3);
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(5);
 
         secondsFlag = true;
     }
