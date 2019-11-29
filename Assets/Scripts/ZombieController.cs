@@ -20,6 +20,7 @@ public class ZombieController : MonoBehaviour
     private ZombieState currentState;
 
     private bool isAttacking;
+    private bool isDying;
 
     public AudioSource hurt1;
     public AudioSource hurt2;
@@ -123,8 +124,11 @@ public class ZombieController : MonoBehaviour
                     }
                     break;
                 case ZombieState.Die:
-                    Zombie.GetComponent<Animation>().Play("Dying");
-                    StartCoroutine(EndZombie());
+                    if (!isDying)
+                    {
+                        Zombie.GetComponent<Animation>().Play("Dying");
+                        StartCoroutine(EndZombie());
+                    }
                     break;
             }
         }
@@ -162,6 +166,7 @@ public class ZombieController : MonoBehaviour
 
     IEnumerator EndZombie()
     {
+        isDying = true;
         System.Random rnd = new System.Random();
         yield return new WaitForSeconds(3);
         int randomDrop = rnd.Next(0, 10);
