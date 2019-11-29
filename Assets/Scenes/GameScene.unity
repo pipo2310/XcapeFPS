@@ -475,7 +475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Zombie: {fileID: 1427222058}
   Jugador: {fileID: 1982803115}
-  Ammo: {fileID: 963305504}
+  Ammo9mm: {fileID: 963305504}
+  AmmoSMG: {fileID: 1010412570}
   Life: {fileID: 990572324}
   Screenflash: {fileID: 696821119}
   zombieHealth: 10
@@ -1622,7 +1623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &473538618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3449,7 +3450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &979360939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11312,11 +11313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489250, guid: da8c37bc547029b4b945b2ade3a5bb92, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.004166666
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 489250, guid: da8c37bc547029b4b945b2ade3a5bb92, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.004166666
+      value: 0.003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da8c37bc547029b4b945b2ade3a5bb92, type: 3}

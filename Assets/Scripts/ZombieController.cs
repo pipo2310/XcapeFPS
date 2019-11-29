@@ -8,7 +8,8 @@ public class ZombieController : MonoBehaviour
 {
     public GameObject Zombie;
     public GameObject Jugador;
-    public GameObject Ammo;
+    public GameObject Ammo9mm;
+    public GameObject AmmoSMG;
     private GameObject AmmoDrop;
     public GameObject Life;
     private GameObject LifeDrop;
@@ -166,7 +167,13 @@ public class ZombieController : MonoBehaviour
         int randomDrop = rnd.Next(0, 10);
         if (AmmoGlobal.CurrentAmmo == 0 || (HealthGlobal.CurrentHealth >= 30 && randomDrop <= 6))
         {
-            AmmoDrop = Instantiate(Ammo, new Vector3(transform.position.x, Ammo.transform.position.y, transform.position.z), Ammo.transform.rotation);
+            if (randomDrop < 4)
+            {
+                AmmoDrop = Instantiate(Ammo9mm, new Vector3(transform.position.x, Ammo9mm.transform.position.y, transform.position.z), Ammo9mm.transform.rotation);
+            } else
+            {
+                AmmoDrop = Instantiate(AmmoSMG, new Vector3(transform.position.x, AmmoSMG.transform.position.y, transform.position.z), AmmoSMG.transform.rotation);
+            }
             AmmoDrop.SetActive(true);
         }
         else
